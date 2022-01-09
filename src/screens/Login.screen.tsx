@@ -1,5 +1,6 @@
 import React from 'react'
 import { ScrollView, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/core'
 import { dpi } from '../functions/Common.function'
 import { screenHeight, screenWidth } from '../constants/Dimension.constant'
 import images from '../constants/Images.constant'
@@ -15,6 +16,7 @@ import OView from '../components/OView'
 const LoginScreen = () => {
   const { t } = useTranslation()
   const colors = useTheme()
+  const navigation = useNavigation()
 
   return (
     <ScrollView contentContainerStyle={{ height: screenHeight, width: screenWidth, backgroundColor: 'white' }} >
@@ -23,7 +25,7 @@ const LoginScreen = () => {
       </HStack>
       <OText top={dpi(4)} size={dpi(17)} center bold>{t.global.welcome}</OText>
       <OView top={screenHeight / 4} paddingHorizontal={dpi(12)} >
-        <OButton bottom={dpi(9)} label={t.global.login} onPress={() => {}} />
+        <OButton bottom={dpi(9)} label={t.global.login} onPress={() => navigation.navigate('Home')} />
         <HStack bottom={dpi(8)} justify="center">
           <OText right={dpi(2)} size={dpi(6)}>{t.login.dontHaveOrbit}</OText>
           <TouchableOpacity>

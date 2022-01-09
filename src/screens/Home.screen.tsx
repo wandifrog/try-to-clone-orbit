@@ -1,7 +1,7 @@
 import React from 'react'
 import { ScrollView, Text, TouchableOpacity } from 'react-native'
+import { useNavigation } from '@react-navigation/core'
 import OText from '../components/OText'
-import useNavigation from '../hooks/Navigation_old.hook'
 
 const HomeScreen = () => {
   const navigation = useNavigation()
@@ -9,7 +9,7 @@ const HomeScreen = () => {
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
       <OText bottom={100}>asdasda</OText>
-      <TouchableOpacity onPress={() => navigation.push('LoginScreen')}>
+      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
         <Text>Click Me</Text>
       </TouchableOpacity>
       <OText bottom={100}>asdasda</OText>
